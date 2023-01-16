@@ -2,8 +2,11 @@ package br.com.grupo3.exc2.controller;
 
 import br.com.grupo3.exc2.dto.TarefaDTO;
 import br.com.grupo3.exc2.model.Tarefa;
+import br.com.grupo3.exc2.model.Usuario;
 import br.com.grupo3.exc2.service.TarefaService;
 import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
 
 @RestController
 @RequestMapping("/tarefas")
@@ -34,5 +37,13 @@ public class TarefaController {
         tarefaService.deleteById(id);
     }
 
+    @GetMapping
+    public List<Tarefa> listar() {
+        return tarefaService.listar();
+    }
 
+    @GetMapping("/{usuarioResponsavel}")
+    public List<Tarefa> buscarPorUsuarioResponsavel(@RequestParam Usuario usuario) {
+        return tarefaService.buscarPorUsuarioResponsavel(usuario);
+    }
 }

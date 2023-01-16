@@ -5,6 +5,7 @@ import br.com.grupo3.exc2.model.Usuario;
 import br.com.grupo3.exc2.repository.UsuarioRepository;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
 import java.util.Optional;
 
 @Service
@@ -35,5 +36,9 @@ public class UsuarioService {
 
     public void deleteById(Long id) {
         usuarioRepository.deleteById(id);
+    }
+
+    public List<Usuario> listar() {
+        return (List<Usuario>) usuarioRepository.findAll();
     }
 }

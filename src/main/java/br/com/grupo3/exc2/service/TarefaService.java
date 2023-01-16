@@ -2,9 +2,11 @@ package br.com.grupo3.exc2.service;
 
 import br.com.grupo3.exc2.dto.TarefaDTO;
 import br.com.grupo3.exc2.model.Tarefa;
+import br.com.grupo3.exc2.model.Usuario;
 import br.com.grupo3.exc2.repository.TarefaRepository;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
 import java.util.Optional;
 
 @Service
@@ -36,4 +38,13 @@ public class TarefaService {
     public void deleteById(Long id) {
         tarefaRepository.deleteById(id);
     }
+
+    public List<Tarefa> listar(){
+        return (List<Tarefa>) tarefaRepository.findAll();
+    }
+
+    public List<Tarefa> buscarPorUsuarioResponsavel(Usuario usuario) {
+        return (List<Tarefa>) tarefaRepository.findByUsuarioResponsavel(usuario);
+    }
+
 }

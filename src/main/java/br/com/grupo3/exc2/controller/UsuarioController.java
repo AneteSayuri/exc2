@@ -5,6 +5,8 @@ import br.com.grupo3.exc2.model.Usuario;
 import br.com.grupo3.exc2.service.UsuarioService;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
+
 @RestController
 @RequestMapping("/usuarios")
 public class UsuarioController {
@@ -34,5 +36,8 @@ public class UsuarioController {
         usuarioService.deleteById(id);
     }
 
-
+    @GetMapping
+    public List<Usuario> listar() {
+        return usuarioService.listar();
+    }
 }
