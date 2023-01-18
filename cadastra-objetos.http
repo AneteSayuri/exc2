@@ -1,0 +1,96 @@
+###
+POST http://localhost:8080/enderecos
+Content-Type: application/json
+
+{
+  "cep": "01452-001",
+  "logradouro": "Faria Lima, Jd.Paulistano",
+  "numero": "1663",
+  "cidade": "São Paulo",
+  "estado": "São Paulo"
+}
+
+###
+POST http://localhost:8080/usuarios
+Content-Type: application/json
+
+{
+  "nomeUsuario": "Ana",
+  "senha": "123",
+  "email": "b3@email.com",
+  "nomeCompleto": "Ana Costa",
+  "endereco": {
+    "cep": "01452-001",
+    "logradouro": "Faria Lima, Jd.Paulistano",
+    "numero": "1663",
+    "cidade": "São Paulo",
+    "estado": "São Paulo"
+  },
+  "dataNascimento": "2000-01-01T08:00:00",
+  "genero": "mulher",
+  "telefone": "11 2127-8000"
+}
+
+###
+POST http://localhost:8080/usuarios
+Content-Type: application/json
+
+{
+  "nomeUsuario": "Ana",
+  "senha": "123",
+  "email": "b3@email.com",
+  "nomeCompleto": "Ana Costa",
+  "endereco": {
+    "id": 1
+  },
+  "dataNascimento": "2000-01-01T08:00:00",
+  "genero": "mulher",
+  "telefone": "11 2127-8000"
+}
+
+###
+POST http://localhost:8080/tarefas
+Content-Type: application/json
+
+{
+  "descricao": "Descricao A",
+  "status": "Status A",
+  "dataDeCriacao": "2000-01-01T08:00:00",
+  "dataDeVencimento": "2020-01-01T08:00:00",
+  "prioridade": "Prioridade A",
+  "usuarioResponsavel": {
+    "nomeUsuario": "Ana",
+    "senha": "123",
+    "email": "b3@email.com",
+    "nomeCompleto": "Ana Costa",
+    "endereco": {
+      "cep": "01452-001",
+      "logradouro": "Faria Lima, Jd.Paulistano",
+      "numero": "1663",
+      "cidade": "São Paulo",
+      "estado": "São Paulo"
+    },
+    "dataNascimento": "2000-01-01T08:00:00",
+    "genero": "mulher",
+    "telefone": "11 2127-8000"
+  },
+  "projeto": "Projeto A",
+  "etiquetas": "Etiquetas A"
+}
+
+###
+POST http://localhost:8080/tarefas
+Content-Type: application/json
+
+{
+  "descricao": "Descricao B",
+  "status": "Status B",
+  "dataDeCriacao": "2000-01-01T08:00:00",
+  "dataDeVencimento": "2020-01-01T08:00:00",
+  "prioridade": "Prioridade B",
+  "usuarioResponsavel": {
+    "id": 1
+  },
+  "projeto": "Projeto B",
+  "etiquetas": "Etiquetas B"
+}
