@@ -8,5 +8,5 @@ import org.springframework.data.repository.CrudRepository;
 import java.util.List;
 
 public interface TarefaRepository extends CrudRepository<Tarefa, Long> {
-    List<Tarefa> findByUsuarioResponsavel(Usuario usuario);
+    List<Tarefa> findByUsuarioResponsavelId(Long id);
 }

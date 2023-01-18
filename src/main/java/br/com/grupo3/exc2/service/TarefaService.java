@@ -43,8 +43,8 @@ public class TarefaService {
         return (List<Tarefa>) tarefaRepository.findAll();
     }
 
-    public List<Tarefa> buscarPorUsuarioResponsavel(Usuario usuario) {
-        return (List<Tarefa>) tarefaRepository.findByUsuarioResponsavel(usuario);
+    public List<Tarefa> buscarPorUsuarioResponsavel(Long id) {
+        return tarefaRepository.findByUsuarioResponsavelId(id);
     }
 
 }

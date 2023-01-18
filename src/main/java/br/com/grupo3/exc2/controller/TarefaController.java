@@ -42,8 +42,8 @@ public class TarefaController {
         return tarefaService.listar();
     }
 
-    @GetMapping("/{usuarioResponsavel}")
-    public List<Tarefa> buscarPorUsuarioResponsavel(@RequestParam Usuario usuario) {
-        return tarefaService.buscarPorUsuarioResponsavel(usuario);
+    @GetMapping("/usuario/{id}")
+    public List<Tarefa> buscarPorUsuarioResponsavel(@PathVariable Long id) {
+        return tarefaService.buscarPorUsuarioResponsavel(id);
     }
 }
